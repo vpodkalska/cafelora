@@ -7,6 +7,7 @@ import { Menu } from '../components/Menu/menu';
 import { Gallery } from '../components/Gallery/gallery';
 import { Contact } from '../components/Contact/contact';
 import { Footer } from '../components/Footer/footer';
+import { Drink } from '../components/Drink/drink'
 
 
 
@@ -19,12 +20,19 @@ document.querySelector('#root').innerHTML = render(
         galerie="galerie"
         kontakt="kontakt"
       />
+      <div>
+
+      </div>
     <main>
       <Banner />
-      <Menu />
+      <Menu 
+        />
       <Gallery />
       <Contact />
     </main>
       <Footer />
   </div>
 );
+
+
+

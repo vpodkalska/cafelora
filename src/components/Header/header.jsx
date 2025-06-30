@@ -8,7 +8,7 @@ export const Header = ({ domu, menu, galerie, kontakt }) => {
           <div className="site-logo"></div>
 
           <div className="navigation">
-            <button className="nav-btn"></button>
+            <button id="nav-button" className="nav-btn"></button>
             <nav className="rollout-nav nav-closed">
               <a href="#home">{domu}</a>
               <a href="#menu">{menu}</a>
@@ -21,4 +21,11 @@ export const Header = ({ domu, menu, galerie, kontakt }) => {
     </header>
   )
 }
+
+
+function navBtnRollout() {
+  
+}
+
+document.querySelector('#nav-button').addEventListener('click', navBtnRollout)
 

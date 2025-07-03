@@ -21,11 +21,3 @@ export const Header = ({ domu, menu, galerie, kontakt }) => {
     </header>
   )
 }
-
-
-function navBtnRollout() {
-  
-}
-
-document.querySelector('#nav-button').addEventListener('click', navBtnRollout)
-

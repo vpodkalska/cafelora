@@ -34,5 +34,17 @@ document.querySelector('#root').innerHTML = render(
   </div>
 );
 
+// hamburger ikonka roll
+const navToggle = document.querySelector(".nav-btn");
+const mobileNav = document.querySelector(".rollout-nav");
+
+navToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("nav-closed");
+});
+
+mobileNav.addEventListener("click", () => {
+  mobileNav.classList.add("nav-closed");
+});
+
 
 

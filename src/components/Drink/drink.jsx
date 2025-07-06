@@ -1,17 +1,20 @@
 import './drink.css'
+import { Layer } from '../Layer/layer'
 
-export const Drink = ({id, name, ordered, image, layers}) => {
+export const Drink = ({id, name, ordered, image}) => {
     return (
         <div className="drink">
 <div className="drink__product">
   <div className="drink__cup">
-    <img src={"/cups/doppio.png"} />
+    <img src={image} />
   </div>
   <div className="drink__info">
     <h3>{name}</h3>
     <div className="layer">
-      <div className="layer__color" style={{ backgroundColor: '#613916' }} />
-      <div className="layer__label">espresso</div>
+      <Layer
+      color = "#613916"
+      label = "espresso"
+      />
     </div>
   </div>
 </div>
@@ -27,4 +30,22 @@ export const Drink = ({id, name, ordered, image, layers}) => {
 
 
 
+/*
+<Drink
+  id={0}
+  name="Romano"
+  ordered={false}
+  image="http://localhost:4000/assets/cups/romano.png"
+  layers={[
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ]}
+/>
 
+*/

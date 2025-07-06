@@ -7,7 +7,6 @@ import { Menu } from '../components/Menu/menu';
 import { Gallery } from '../components/Gallery/gallery';
 import { Contact } from '../components/Contact/contact';
 import { Footer } from '../components/Footer/footer';
-import { Drink } from '../components/Drink/drink'
 
 
 

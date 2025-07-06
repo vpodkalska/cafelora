@@ -12,7 +12,9 @@ export const Menu = ({}) => {
         <div className="drinks-list">
 
           <Drink
+            id = ""
             name="Doppio"
+            ordered=""
             image="/cups/doppio.png"
           />
 
@@ -27,3 +29,23 @@ export const Menu = ({}) => {
 
   )
 }
+
+/*
+<Drink
+  id={0}
+  name="Romano"
+  ordered={false}
+  image="http://localhost:4000/assets/cups/romano.png"
+  layers={[
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ]}
+/>
+
+*/

@@ -19,34 +19,12 @@ export const Drink = ({ id, name, ordered, image, layers }) => {
             )}
         </div>
       </div>
-      <form className="drink__controls">
+      <form className="drink__controls" data-id={id}>
         <input type="hidden" className="order-id" value="1" />
-        <button className="order-btn">
-          Objednat
+        <button className= {`order-btn ${ordered ? 'order-btn--ordered' : ''}`}>
+          {ordered ? 'Zrušit' : 'Objednat'}
         </button>
       </form>
     </div>
   )
 }
-
-
-
-/*
-<Drink
-  id={0}
-  name="Romano"
-  ordered={false}
-  image="http://localhost:4000/assets/cups/romano.png"
-  layers={[
-    {
-      color: '#fbdf5b',
-      label: 'citrón',
-    },
-    {
-      color: '#613916',
-      label: 'espresso',
-    },
-  ]}
-/>
-
-*/

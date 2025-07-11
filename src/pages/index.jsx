@@ -15,24 +15,24 @@ const drinksData = data.data
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
-      <Header
-        domu="domů"
-        menu="menu"
-        galerie="galerie"
-        kontakt="kontakt"
-      />
-      <div>
+    <Header
+      domu="domů"
+      menu="menu"
+      galerie="galerie"
+      kontakt="kontakt"
+    />
+    <div>
 
-      </div>
+    </div>
     <main>
       <Banner />
-      <Menu 
-      drinks = {drinksData}
-        />
+      <Menu
+        drinks={drinksData}
+      />
       <Gallery />
       <Contact />
     </main>
-      <Footer />
+    <Footer />
   </div>
 );
 
@@ -47,6 +47,40 @@ navToggle.addEventListener("click", () => {
 mobileNav.addEventListener("click", () => {
   mobileNav.classList.add("nav-closed");
 });
+
+//objednani napoje
+
+
+const orderForms = document.querySelectorAll('.drink form');
+orderForms.forEach(form => {
+  form.addEventListener('submit', async (prop) => {
+    prop.preventDefault();
+    const drinkId = Number(prop.target.dataset.id);
+
+    
+    const drink = drinksData.find(drink => drink.id === drinkId);
+    const orderValue = !drink.ordered;
+
+    // poslat objednavku
+    const response = await fetch(`http://localhost:4000/api/drinks/${drinkId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([{
+        op: 'replace',
+        path: '/ordered',
+        value: orderValue,
+      }]),
+    });
+    const data = await response.json();
+    console.log(data);
+
+    window.location.reload();
+
+  });
+});
+
 
 
 
